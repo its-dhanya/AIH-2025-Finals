@@ -1,0 +1,150 @@
+{
+    "challenge_info": {
+        "challenge_id": "round_1b_003",
+        "test_case_name": "create_manageable_forms",
+        "description": "Creating manageable forms"
+    },
+    "documents": [
+        {
+            "filename": "Learn Acrobat - Create and Convert_1.pdf",
+            "title": "Learn Acrobat - Create and Convert_1"
+        },
+        {
+            "filename": "Learn Acrobat - Create and Convert_2.pdf",
+            "title": "Learn Acrobat - Create and Convert_2"
+        },
+        {
+            "filename": "Learn Acrobat - Edit_1.pdf",
+            "title": "Learn Acrobat - Edit_1"
+        },
+        {
+            "filename": "Learn Acrobat - Edit_2.pdf",
+            "title": "Learn Acrobat - Edit_2"
+        },
+        {
+            "filename": "Learn Acrobat - Export_1.pdf",
+            "title": "Learn Acrobat - Export_1"
+        },
+        {
+            "filename": "Learn Acrobat - Export_2.pdf",
+            "title": "Learn Acrobat - Export_2"
+        },
+        {
+            "filename": "Learn Acrobat - Fill and Sign.pdf",
+            "title": "Learn Acrobat - Fill and Sign"
+        },
+        {
+            "filename": "Learn Acrobat - Generative AI_1.pdf",
+            "title": "Learn Acrobat - Generative AI_1"
+        },
+        {
+            "filename": "Learn Acrobat - Generative AI_2.pdf",
+            "title": "Learn Acrobat - Generative AI_2"
+        },
+        {
+            "filename": "Learn Acrobat - Request e-signatures_1.pdf",
+            "title": "Learn Acrobat - Request e-signatures_1"
+        },
+        {
+            "filename": "Learn Acrobat - Request e-signatures_2.pdf",
+            "title": "Learn Acrobat - Request e-signatures_2"
+        },
+        {
+            "filename": "Learn Acrobat - Share_1.pdf",
+            "title": "Learn Acrobat - Share_1"
+        },
+        {
+            "filename": "Learn Acrobat - Share_2.pdf",
+            "title": "Learn Acrobat - Share_2"
+        },
+        {
+            "filename": "Test Your Acrobat Exporting Skills.pdf",
+            "title": "Test Your Acrobat Exporting Skills"
+        },
+        {
+            "filename": "The Ultimate PDF Sharing Checklist.pdf",
+            "title": "The Ultimate PDF Sharing Checklist"
+        }
+    ],
+    "persona": {
+        "role": "HR professional"
+    },
+    "job_to_be_done": {
+        "task": "Create and manage fillable forms for onboarding and compliance."
+    },
+    "extracted_sections": [
+        {
+            "document": "Learn Acrobat - Request e-signatures_1.pdf",
+            "section_title": "Select Next, and then select Finish.",
+            "importance_rank": 1,
+            "page_number": 27
+        },
+        {
+            "document": "Learn Acrobat - Request e-signatures_2.pdf",
+            "section_title": "3. Sign the PDF.",
+            "importance_rank": 2,
+            "page_number": 11
+        },
+        {
+            "document": "Learn Acrobat - Request e-signatures_1.pdf",
+            "section_title": "For details on the full range of configuration options in enterprise settings, see the Digital Signatures Guide.",
+            "importance_rank": 3,
+            "page_number": 25
+        },
+        {
+            "document": "Learn Acrobat - Fill and Sign.pdf",
+            "section_title": "Is the form fillable?",
+            "importance_rank": 4,
+            "page_number": 8
+        },
+        {
+            "document": "Learn Acrobat - Fill and Sign.pdf",
+            "section_title": "• Interactive forms: These contain fields that you can select and fill in.",
+            "importance_rank": 5,
+            "page_number": 2
+        }
+    ],
+    "subsection_analysis": [
+        {
+            "document": "Learn Acrobat - Request e-signatures_1.pdf",
+            "refined_text": "Once the roaming ID is added, it can be used for signing or encryption. When you perform a task that uses your roaming ID, you're automatically logged in to the roaming ID server if your authentication assertion hasn't expired. You can have multiple digital IDs that you use for different purposes, particularly if you sign documents in different roles or using different certification methods. Digital IDs are usually password protected. They can be stored on your computer in PKCS 12 file format. Digital IDs can also be stored on a smart card, hardware token, or in the Windows certificate store. Roaming IDs can be stored on a server. Acrobat includes a default signature handler that can access digital IDs from various locations. Register the digital ID in Acrobat for it to be available for use.",
+            "page_number": 27
+        },
+        {
+            "document": "Learn Acrobat - Request e-signatures_2.pdf",
+            "refined_text": "If all the elements of the certificate chain are available, the information is added to the PDF automatically. If a timestamp server has been configured, the timestamp is also added. In certain workflows, signature validation information may be unavailable during the signing but can be obtained later. For instance, a company official may sign a contract on a laptop while traveling without internet access. When internet access is later available, anyone validating the signature can add timestamping and revocation information to the PDF. Subsequent signature validations can also make use of this information.",
+            "page_number": 11
+        },
+        {
+            "document": "Learn Acrobat - Request e-signatures_1.pdf",
+            "refined_text": "Choose a signature type. Learn about approval and certification signatures to determine the type you should choose to sign your document. (See Signature types.) Signing workflow preferences control what you can see and do when the signing dialog box opens. You can allow certain actions, hide and display data fields, and change how content affects the signing process. Setting signing preferences impacts your ability to see what you are signing. For information on the available signing preferences, see \"Signing Workflow Preferences\" in the Digital Signature Guide.",
+            "page_number": 25
+        },
+        {
+            "document": "Learn Acrobat - Fill and Sign.pdf",
+            "refined_text": "Not all forms are fillable. Sometimes form creators don't convert their PDFs to interactive fillable forms. Or, they intentionally design a form that you can fill in only by hand or with the Fill Sign tool. These non-interactive forms are called flat forms.",
+            "page_number": 8
+        },
+        {
+            "document": "Learn Acrobat - Fill and Sign.pdf",
+            "refined_text": "Flat forms: These do not have interactive fields. It could be a paper form or PDF that hasn't been optimized for form filling. The Fill Sign tool automatically detects the form fields like text fields, comb fields, checkboxes, and radio buttons. You can manually add text and other symbols anywhere on the form using the Fill Sign tool if required. You can complete the forms by entering information and adding your signatures. Acrobat also allows you to send your completed forms to others and securely save them in Adobe cloud storage.",
+            "page_number": 2
+        }
+    ],
+    "processing_timestamp": "2025-08-07T07:27:52.531503+00:00",
+    "domain_analysis": {
+        "detected_domains": {
+            "manual": 247,
+            "general": 125
+        },
+        "primary_domain": "manual",
+        "total_chunks_processed": 372
+    },
+    "processing_config": {
+        "min_chunk_words": 20,
+        "title_score_threshold": 0.5,
+        "final_report_sections": 5,
+        "bi_encoder_model": "sentence-transformers/msmarco-MiniLM-L-6-v3",
+        "title_detection": "smart_title_detector_v4_refined"
+    }
+}

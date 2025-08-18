@@ -1,0 +1,118 @@
+{
+    "challenge_info": {
+        "challenge_id": "round_1b_002",
+        "test_case_name": "travel_planner",
+        "description": "France Travel"
+    },
+    "documents": [
+        {
+            "filename": "South of France - Cities.pdf",
+            "title": "South of France - Cities"
+        },
+        {
+            "filename": "South of France - Cuisine.pdf",
+            "title": "South of France - Cuisine"
+        },
+        {
+            "filename": "South of France - History.pdf",
+            "title": "South of France - History"
+        },
+        {
+            "filename": "South of France - Restaurants and Hotels.pdf",
+            "title": "South of France - Restaurants and Hotels"
+        },
+        {
+            "filename": "South of France - Things to Do.pdf",
+            "title": "South of France - Things to Do"
+        },
+        {
+            "filename": "South of France - Tips and Tricks.pdf",
+            "title": "South of France - Tips and Tricks"
+        },
+        {
+            "filename": "South of France - Traditions and Culture.pdf",
+            "title": "South of France - Traditions and Culture"
+        }
+    ],
+    "persona": {
+        "role": "Travel Planner"
+    },
+    "job_to_be_done": {
+        "task": "Plan a trip of 4 days for a group of 10 college friends."
+    },
+    "extracted_sections": [
+        {
+            "document": "South of France - Restaurants and Hotels.pdf",
+            "section_title": "Family-Friendly Hotels",
+            "importance_rank": 1,
+            "page_number": 9
+        },
+        {
+            "document": "South of France - Restaurants and Hotels.pdf",
+            "section_title": "Budget-Friendly Hotels",
+            "importance_rank": 2,
+            "page_number": 8
+        },
+        {
+            "document": "South of France - Traditions and Culture.pdf",
+            "section_title": "Transhumance Festivals",
+            "importance_rank": 3,
+            "page_number": 2
+        },
+        {
+            "document": "South of France - Restaurants and Hotels.pdf",
+            "section_title": "Conclusion",
+            "importance_rank": 4,
+            "page_number": 14
+        },
+        {
+            "document": "South of France - Cities.pdf",
+            "section_title": "• Walking Tour: Take a walking tour of sites related to Paul Cézanne, such as the Terrain des Peintres and the Bibémus Quarry.",
+            "importance_rank": 5,
+            "page_number": 8
+        }
+    ],
+    "subsection_analysis": [
+        {
+            "document": "South of France - Restaurants and Hotels.pdf",
+            "refined_text": "Club Med Opio en Provence (Opio): A family-friendly resort offering a wide range of activities for children and adults, including sports, entertainment, and kids' clubs. The beautiful setting and all-inclusive amenities make it a hassle-free vacation spot. Le Mas de Pierre (Saint-Paul-de-Vence): A luxurious family-friendly hotel offering spacious rooms, beautiful gardens, and a variety of activities for children. The elegant decor and attentive service ensure a comfortable stay for families. Hôtel Les Roches Rouges (Saint-Raphaël): A family-friendly hotel located on the beach, offering comfortable rooms, a kids' club, and a variety of water sports. The beachfront location and family-oriented amenities make it a great choice for a seaside vacation. Château de Berne (Lorgues): A family-friendly hotel located on a vineyard, offering spacious rooms, a kids' club, and a variety of outdoor activities. The picturesque setting and family-friendly facilities make it a unique and enjoyable stay. Hôtel Barrière Le Majestic (Cannes): A luxurious family-friendly hotel offering spacious rooms, beautiful gardens, and a variety of activities for children. The elegant decor and attentive service ensure a comfortable stay for families. Hôtel du Cap-Eden-Roc (Antibes): A luxurious family-friendly hotel offering spacious rooms, beautiful gardens, and a variety of activities for children. The elegant decor and attentive service ensure a comfortable stay for families. Hôtel Royal Riviera (Saint-Jean-Cap-Ferrat): A luxurious family-friendly hotel offering spacious rooms, beautiful gardens, and a variety of activities for children. The elegant decor and attentive service ensure a comfortable stay for families. Hôtel Le Negresco (Nice): A luxurious family-friendly hotel offering spacious rooms, beautiful gardens, and a variety of activities for children. The elegant decor and attentive service ensure a comfortable stay for families. Hôtel Martinez (Cannes): A luxurious family-friendly hotel offering spacious rooms, beautiful gardens, and a variety of activities for children. The elegant decor and attentive service ensure a comfortable stay for families. Hôtel de Paris (Monaco): A luxurious family-friendly hotel offering spacious rooms, beautiful gardens, and a variety of activities for children. The elegant decor and attentive service ensure a comfortable stay for families.",
+            "page_number": 9
+        },
+        {
+            "document": "South of France - Restaurants and Hotels.pdf",
+            "refined_text": "Ibis Budget Nice Californie Lenval (Nice): A budget-friendly hotel offering comfortable rooms and easy access to the beach and city center. The modern amenities and convenient location make it a great choice for budget-conscious travelers. Hotel Le Saint Paul (Nice): A charming hotel located in a historic building, offering affordable rates and beautiful views of the Mediterranean. The cozy rooms and friendly service make it a pleasant stay. Hotel des Arts (Montpellier): A budget-friendly hotel located in the heart of Montpellier, offering comfortable rooms and easy access to the city's attractions. The artistic decor and central location make it a popular choice. Hotel Le Mistral (Marseille): A budget-friendly hotel offering simple, clean rooms and a convenient location near the Old Port. The friendly staff and affordable rates make it a good option for travelers on a budget. Hotel Azur (Nice): A budget-friendly hotel offering comfortable rooms and easy access to the beach and city center. The modern amenities and convenient location make it a great choice for budget-conscious travelers. Hotel de la Paix (Marseille): A budget-friendly hotel offering simple, clean rooms and a convenient location near the Old Port. The friendly staff and affordable rates make it a good option for travelers on a budget. Hotel du Palais (Montpellier): A budget-friendly hotel located in the heart of Montpellier, offering comfortable rooms and easy access to the city's attractions. The artistic decor and central location make it a popular choice. Hotel de la Mer (Nice): A budget-friendly hotel offering comfortable rooms and easy access to the beach and city center. The modern amenities and convenient location make it a great choice for budget-conscious travelers. Hotel de la Plage (Marseille): A budget-friendly hotel offering simple, clean rooms and a convenient location near the Old Port. The friendly staff and affordable rates make it a good option for travelers on a budget. Hotel de la Gare (Montpellier): A budget-friendly hotel located in the heart of Montpellier, offering comfortable rooms and easy access to the city's attractions. The artistic decor and central location make it a popular choice.",
+            "page_number": 8
+        },
+        {
+            "document": "South of France - Traditions and Culture.pdf",
+            "refined_text": "Transhumance, the seasonal migration of livestock to higher pastures, is a tradition that dates back centuries. Although modern transportation has replaced much of the traditional practice, transhumance festivals are still celebrated in many villages, particularly in Saint-Rémy-de-Provence in May. These festivals feature parades of sheep, goats, and cattle,",
+            "page_number": 2
+        },
+        {
+            "document": "South of France - Restaurants and Hotels.pdf",
+            "refined_text": "The South of France offers a wide range of dining and accommodation options to suit every budget and preference. Whether you're looking for budget-friendly eateries, family-friendly spots, upscale dining, or luxurious experiences, this guide will help you find the perfect places to eat and stay during your trip. From the vibrant cities of Nice and Marseille to the charming villages of Provence, the South of France promises an unforgettable travel experience. Bon voyage!",
+            "page_number": 14
+        },
+        {
+            "document": "South of France - Cities.pdf",
+            "refined_text": "Local Markets: Visit the city's famous markets, such as the flower market at Place de l'Hôtel de Ville or the food market at Place Richelme. Aix-en-Provence is known for its vibrant arts scene, with numerous galleries, theaters, and music venues. The city hosts several festivals throughout the year, including the Festival d'Aix-en-Provence, which features opera and classical music performances. Aix-en-Provence's cuisine is also a highlight, with local specialties such as calissons (almond-shaped candies) and Provençal dishes made with fresh, local ingredients.",
+            "page_number": 8
+        }
+    ],
+    "processing_timestamp": "2025-08-07T07:29:51.628409+00:00",
+    "domain_analysis": {
+        "detected_domains": {
+            "general": 83,
+            "recipe": 9
+        },
+        "primary_domain": "general",
+        "total_chunks_processed": 92
+    },
+    "processing_config": {
+        "min_chunk_words": 20,
+        "title_score_threshold": 0.5,
+        "final_report_sections": 5,
+        "bi_encoder_model": "sentence-transformers/msmarco-MiniLM-L-6-v3",
+        "title_detection": "smart_title_detector_v4_refined"
+    }
+}

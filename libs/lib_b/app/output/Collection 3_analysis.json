@@ -1,0 +1,125 @@
+{
+    "challenge_info": {
+        "challenge_id": "round_1b_001",
+        "test_case_name": "menu_planning",
+        "description": "Dinner menu planning"
+    },
+    "documents": [
+        {
+            "filename": "Breakfast Ideas.pdf",
+            "title": "Breakfast Ideas"
+        },
+        {
+            "filename": "Dinner Ideas - Mains_1.pdf",
+            "title": "Dinner Ideas - Mains_1"
+        },
+        {
+            "filename": "Dinner Ideas - Mains_2.pdf",
+            "title": "Dinner Ideas - Mains_2"
+        },
+        {
+            "filename": "Dinner Ideas - Mains_3.pdf",
+            "title": "Dinner Ideas - Mains_3"
+        },
+        {
+            "filename": "Dinner Ideas - Sides_1.pdf",
+            "title": "Dinner Ideas - Sides_1"
+        },
+        {
+            "filename": "Dinner Ideas - Sides_2.pdf",
+            "title": "Dinner Ideas - Sides_2"
+        },
+        {
+            "filename": "Dinner Ideas - Sides_3.pdf",
+            "title": "Dinner Ideas - Sides_3"
+        },
+        {
+            "filename": "Dinner Ideas - Sides_4.pdf",
+            "title": "Dinner Ideas - Sides_4"
+        },
+        {
+            "filename": "Lunch Ideas.pdf",
+            "title": "Lunch Ideas"
+        }
+    ],
+    "persona": {
+        "role": "Food Contractor"
+    },
+    "job_to_be_done": {
+        "task": "Prepare a vegetarian buffet-style dinner menu for a corporate gathering, including gluten-free items."
+    },
+    "extracted_sections": [
+        {
+            "document": "Dinner Ideas - Sides_2.pdf",
+            "section_title": "Dinner Ideas   Sides_2",
+            "importance_rank": 1,
+            "page_number": 8
+        },
+        {
+            "document": "Dinner Ideas - Sides_2.pdf",
+            "section_title": " Instructions:",
+            "importance_rank": 2,
+            "page_number": 1
+        },
+        {
+            "document": "Dinner Ideas - Sides_4.pdf",
+            "section_title": " Instructions:",
+            "importance_rank": 3,
+            "page_number": 1
+        },
+        {
+            "document": "Dinner Ideas - Sides_2.pdf",
+            "section_title": "Dinner Ideas   Sides_2",
+            "importance_rank": 4,
+            "page_number": 14
+        },
+        {
+            "document": "Dinner Ideas - Sides_2.pdf",
+            "section_title": "Dinner Ideas   Sides_2",
+            "importance_rank": 5,
+            "page_number": 11
+        }
+    ],
+    "subsection_analysis": [
+        {
+            "document": "Dinner Ideas - Sides_2.pdf",
+            "refined_text": "Toast pita breads until crispy, then break into pieces. o Dice tomatoes and cucumber, slice red onion. o Mix vegetables with chopped parsley and mint. o Whisk lemon juice, olive oil, sumac, and salt, then pour over salad. o Toss well and serve.",
+            "page_number": 8
+        },
+        {
+            "document": "Dinner Ideas - Sides_2.pdf",
+            "refined_text": "Sauté shredded coconut until lightly browned. o Add rice, coconut milk, water, and salt. o Bring to a boil, then reduce heat and simmer until rice is tender. o Serve warm. Shred cabbage and grate carrots. o Mix mayonnaise, vinegar, sugar, and salt in a bowl. o Toss cabbage and carrots with dressing. o Chill for at least 1 hour before serving.",
+            "page_number": 1
+        },
+        {
+            "document": "Dinner Ideas - Sides_4.pdf",
+            "refined_text": "Slice baguette and toast until golden. o Rub toasted bread with cut garlic cloves. o Grate tomatoes and spread on bread. o Drizzle with olive oil and sprinkle with salt. o Serve immediately. 1 pound paneer o 1/2 cup yogurt o 1 tablespoon lemon juice o 1 teaspoon cumin o 1 teaspoon coriander o 1 teaspoon garam masala o 1 teaspoon turmeric",
+            "page_number": 1
+        },
+        {
+            "document": "Dinner Ideas - Sides_2.pdf",
+            "refined_text": "Dice tomatoes and cucumber, slice red onion. o Mix vegetables with olives and crumbled feta cheese. o Whisk olive oil, vinegar, oregano, and salt, then pour over salad. o Toss well and serve. 4 cups green beans o 1 can cream of mushroom soup o 1/2 cup milk o 1 cup fried onions o 1 teaspoon salt o 1/2 teaspoon pepper",
+            "page_number": 14
+        },
+        {
+            "document": "Dinner Ideas - Sides_2.pdf",
+            "refined_text": "Peel and dice potatoes. o Sauté potatoes in sesame oil until lightly browned. o Add soy sauce, sugar, and water, simmer until potatoes are tender. o Garnish with sesame seeds and serve warm.",
+            "page_number": 11
+        }
+    ],
+    "processing_timestamp": "2025-08-07T07:29:00.122380+00:00",
+    "domain_analysis": {
+        "detected_domains": {
+            "recipe": 181
+        },
+        "primary_domain": "recipe",
+        "total_chunks_processed": 181
+    },
+    "processing_config": {
+        "min_chunk_words": 20,
+        "title_score_threshold": 0.5,
+        "final_report_sections": 5,
+        "bi_encoder_model": "sentence-transformers/msmarco-MiniLM-L-6-v3",
+        "title_detection": "smart_title_detector_v4_refined"
+    }
+}
