@@ -63,8 +63,8 @@ docker run -d --platform linux/amd64 \
 ```
 
 **Access the application:**
-- **Backend**: `http://localhost:8080`
-- **Frontend**: `http://localhost:3000`
+- **Backend**: `http://localhost:3000`
+- **Frontend**: `http://localhost:8080`
 
 > **Note**: If the frontend page is not loading, refresh it and it will work.
 
@@ -115,7 +115,7 @@ If you prefer to run locally without Docker, follow these typical steps:
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run dev`
 
-The frontend will typically run on port 3000.
+The frontend will typically run on port 8080.
 
 ## License
 
