@@ -6,6 +6,6 @@ import tailwindcss from 'tailwindcss'
 export default defineConfig({
   plugins: [react(), tailwindcss(),],
   server: {
-    port: 3000
+    port: 8080
   }
 })

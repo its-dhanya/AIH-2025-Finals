@@ -130,6 +130,6 @@ RUN python -c "import sentence_transformers; print('✓ SentenceTransformers imp
 # Verify libs directory structure
 RUN ls -la /app/libs/ && ls -la /app/libs/lib_a/ || echo "libs directory structure check"
 
-EXPOSE 8080 3000
+EXPOSE 3000 8080
 
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
