@@ -8,7 +8,7 @@ app = FastAPI(title="weavedocs API")
 # 2. Configure CORS to allow your frontend to make requests
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], # Your React app's origin
+    allow_origins=["http://localhost:3000"], # Your React app's origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

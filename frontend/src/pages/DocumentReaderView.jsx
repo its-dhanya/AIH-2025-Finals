@@ -84,7 +84,7 @@ const ConnectionsPanel = ({
     setInsightsError(null);
     
     try {
-      const response = await fetch('http://localhost:8000/api/generate-insights', {
+      const response = await fetch('http://localhost:8080/api/generate-insights', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1442,7 +1442,7 @@ const DocumentReaderView = () => {
     let mounted = true;
     const resetSession = async () => {
       try {
-        await fetch('http://localhost:8000/api/reset', { method: 'POST' });
+        await fetch('http://localhost:8080/api/reset', { method: 'POST' });
         console.log('Session reset on page load');
       } catch (err) {
         console.error('Failed to reset session on load:', err);
@@ -1543,7 +1543,7 @@ const generateInsights = async (connectionsData, selectedText) => {
 
     console.log('Sending insights request:', requestPayload);
 
-    const response = await fetch('http://localhost:8000/api/generate-insights', {
+    const response = await fetch('http://localhost:8080/api/generate-insights', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
@@ -1613,7 +1613,7 @@ const generateInsights = async (connectionsData, selectedText) => {
   
     setInsightsLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/generate-insights', {
+      const res = await fetch('http://localhost:8080/api/generate-insights', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ section_text: sectionText, doc_id: docId || activeDoc?.doc_id })
@@ -1657,7 +1657,7 @@ const generateInsights = async (connectionsData, selectedText) => {
     setShowConnectionsPanel(true); // auto-open connections panel when text is selected
     setConnections([]);
     try {
-      const response = await fetch('http://localhost:8000/api/find-connections', {
+      const response = await fetch('http://localhost:8080/api/find-connections', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -1691,7 +1691,7 @@ const generateInsights = async (connectionsData, selectedText) => {
     files.forEach(file => formData.append('files', file));
     
     try {
-      const response = await fetch('http://localhost:8000/api/upload-and-index', { 
+      const response = await fetch('http://localhost:8080/api/upload-and-index', { 
         method: 'POST', 
         body: formData 
       });

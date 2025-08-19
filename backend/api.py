@@ -1020,6 +1020,121 @@ async def generate_json_with_langchain_gemini(prompt: str) -> Tuple[Optional[dic
             "error": str(e)[:200],
             "timestamp": datetime.now().isoformat()
         }
+async def process_insights_with_validation(request: InsightRequest) -> dict:
+    """
+    Process insights request with validation - main orchestration function.
+    
+    This function:
+    1. Creates a prompt from the request
+    2. Tries to generate insights using Gemini (with multiple models)
+    3. Falls back to deterministic generation if needed
+    4. Validates and converts the result for frontend consumption
+    
+    Args:
+        request: InsightRequest containing selected text, connections, etc.
+        
+    Returns:
+        dict: Processed insights ready for frontend consumption
+    """
+    logger.info("Processing insights request with %d connections", len(request.connections or []))
+    
+    try:
+        # Step 1: Create prompt from request
+        prompt = create_insights_prompt(request)
+        logger.debug("Created prompt of length: %d", len(prompt))
+        
+        # Step 2: Try to generate insights using Gemini
+        insights_data = None
+        metadata = {}
+        
+        try:
+            # Create HTTP session for Gemini calls
+            connector = aiohttp.TCPConnector(limit=1)
+            async with aiohttp.ClientSession(connector=connector) as session:
+                # First try the multi-model Gemini approach
+                insights_data, metadata = await generate_json_with_gemini_multi_model(
+                    prompt, session, overall_timeout=MAX_OVERALL_TIMEOUT
+                )
+                
+                # If multi-model fails, try LangChain approach as backup
+                if not insights_data:
+                    logger.info("Multi-model Gemini failed, trying LangChain approach")
+                    insights_data, langchain_metadata = await generate_json_with_langchain_gemini(prompt)
+                    if insights_data:
+                        metadata.update(langchain_metadata)
+                        metadata["fallback_method"] = "langchain"
+                        
+        except Exception as e:
+            logger.warning("All Gemini approaches failed: %s", e)
+            insights_data = None
+            metadata = {"gemini_error": str(e)[:200]}
+        
+        # Step 3: If Gemini failed, use deterministic fallback
+        if not insights_data:
+            logger.info("Using deterministic fallback for insights generation")
+            insights_data, fallback_metadata = generate_deterministic_fallback(request)
+            metadata.update(fallback_metadata)
+            metadata["used_fallback"] = True
+        else:
+            metadata["used_fallback"] = False
+            logger.info("Successfully generated insights using AI model")
+        
+        # Step 4: Validate and ensure required fields
+        if insights_data:
+            insights_data = ensure_required_fields(insights_data)
+            
+            # Validate against schema
+            is_valid, validation_error = validate_json_against_schema(insights_data)
+            if not is_valid:
+                logger.warning("Generated insights failed schema validation: %s", validation_error)
+                metadata["validation_error"] = validation_error
+                # Try to fix common issues
+                insights_data = ensure_required_fields(insights_data)
+        else:
+            logger.error("No insights data generated, creating minimal fallback")
+            insights_data = {
+                "summary": "Unable to generate detailed analysis",
+                "key_takeaways": ["Analysis completed with limited results"],
+                "did_you_know": [],
+                "contradictions": [],
+                "examples": [{"text": "No examples could be extracted", "document_name": None, "page_number": None}],
+                "additional_insights": []
+            }
+            metadata["error"] = "complete_fallback_used"
+        
+        # Step 5: Convert to frontend-safe format
+        result = convert_insights_to_dict_safe(insights_data, metadata)
+        
+        logger.info("Insights processing completed successfully")
+        return result
+        
+    except Exception as e:
+        logger.exception("Critical error in process_insights_with_validation: %s", e)
+        
+        # Last resort fallback
+        try:
+            fallback_data, fallback_meta = generate_deterministic_fallback(request)
+            fallback_meta["critical_error"] = str(e)[:200]
+            return convert_insights_to_dict_safe(fallback_data, fallback_meta)
+        except Exception as fallback_error:
+            logger.exception("Even fallback failed: %s", fallback_error)
+            
+            # Absolute minimum response
+            return {
+                "summary": "Error occurred during analysis",
+                "key_takeaways": ["Analysis could not be completed"],
+                "did_you_know": [],
+                "contradictions": [],
+                "examples": ["Error prevented example extraction"],
+                "example_texts": ["Error prevented example extraction"],
+                "example_objects": [{"text": "Error prevented example extraction", "document_name": None, "page_number": None}],
+                "additional_insights": [],
+                "metadata": {
+                    "error": str(e)[:200],
+                    "fallback_error": str(fallback_error)[:200],
+                    "timestamp": datetime.now().isoformat()
+                }
+            }
 # -------------------- API endpoints --------------------
 @router.post("/generate-insights")
 async def generate_insights(request: InsightRequest):

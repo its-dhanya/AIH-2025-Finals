@@ -428,7 +428,7 @@ const CollectionAnalysisPage = () => {
       // Extract document IDs for batch analysis
       const docIds = documents.map(doc => doc.doc_id);
       
-      const response = await fetch('http://localhost:8000/api/analyze-collection', {
+      const response = await fetch('http://localhost:8080/api/analyze-collection', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

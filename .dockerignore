@@ -1,0 +1,80 @@
+# Python caches / compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pyc
+
+# Virtualenvs
+.venv/
+venv/
+env/
+env.bak/
+
+# Node/NPM
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# Build / distribution artifacts
+build/
+dist/
+frontend/dist/
+frontend/build/
+*.egg-info/
+.eggs/
+
+# Logs / databases / env
+*.log
+*.sqlite3
+.env
+.env.*.local
+
+# Test / coverage / caches
+htmlcov/
+.coverage
+.tox/
+.pytest_cache/
+.mypy_cache/
+.cache/
+*.cache
+*.tmp
+
+# IDE/editor files
+.vscode/
+.idea/
+*.sublime-*
+*.DS_Store
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker-related local overrides (if you use them)
+Dockerfile.local
+docker-compose*.yml
+
+# Misc
+*.bak
+*~ 
+
+# Ignore local docker/build artifacts
+Dockerfile.build
+docker-image-*.tar
+
+# --- Explicitly allow important build-time files (negations) ---
+# ensure Dockerfile, backend requirements and frontend package files are copied
+!Dockerfile
+!backend/Dockerfile
+!backend/requirements*.txt
+!backend/supervisord.conf
+!frontend/package*.json
+!frontend/package-lock.json
+!frontend/yarn.lock
+
+# Keep dotfiles needed for build (if any)
+!.env.example

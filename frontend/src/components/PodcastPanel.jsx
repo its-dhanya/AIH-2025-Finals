@@ -46,7 +46,7 @@ export default function PodcastPanel({
   const checkPodcastHealth = async () => {
     setIsHealthLoading(true);
     try {
-      const response = await fetch("http://localhost:8000/api/podcast-health");
+      const response = await fetch("http://localhost:8080/api/podcast-health");
       if (!response.ok) {
         throw new Error(`Health check failed: ${response.status}`);
       }
@@ -113,7 +113,7 @@ export default function PodcastPanel({
         connectionsCount: payload.connections?.length || 0
       });
 
-      const response = await fetch("http://localhost:8000/api/generate-podcast", {
+      const response = await fetch("http://localhost:8080/api/generate-podcast", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json"

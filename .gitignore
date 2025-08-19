@@ -34,3 +34,4 @@ Thumbs.db
 # Misc
 coverage/
 tmp/
+__pycache__/
