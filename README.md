@@ -1,15 +1,12 @@
 # WeaveDocs
-
 **A prototype developed for the Adobe India Hackathon Grand Finale by Team Cache Me If You Can**
 
 ## Overview
-
 WeaveDocs is a fullstack application that revolutionizes how you interact with document collections. Upload your PDFs and unlock a new way to explore, understand, and consume information through intelligent document analysis, cross-referencing, and audio summaries.
 
 The application leverages advanced AI to extract document structure, identify relationships between content across multiple documents, and provide contextual insights. Whether you're researching, studying, or analyzing large document collections, WeaveDocs transforms static PDFs into an interactive, connected knowledge base.
 
 ## Key Features
-
 ### 1. **Upload Documents**
 Upload a single file or a collection of documents (PDFs).
 
@@ -32,28 +29,24 @@ Get a concise gist of your highlighted text and the retrieved sections, with exa
 Generate an audio overview (podcast-style) of the highlighted section and its relevant contents.
 
 ## Prerequisites
-
 - **Docker installed**: [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
 - **API keys** for the external services you use (store them as environment variables when running the container):
-  - `ADOBE_EMBED_API_KEY`
-  - `GEMINI_API_KEY`
+  - `ADOBE_EMBED_API_KEY` - Already provided: `663e2a29bf764b4285d84ef1d4d94fc4` (for hackathon evaluation)
+  - `GEMINI_API_KEY` - Required for AI-powered document analysis
   - Any other provider-specific keys for TTS, etc.
 
 ## Quick Start
-
 ### Build the Docker Image
-
 ```bash
 docker build -t my-fullstack-app .
 ```
 
 ### Run the App (Docker)
-
 ```bash
 docker run -d --platform linux/amd64 \
   --name my-fullstack-app \
-  -e ADOBE_EMBED_API_KEY=<your-adobe-key> \
-  -e GEMINI_API_KEY=<your-gemini-key> \
+  -e ADOBE_EMBED_API_KEY=663e2a29bf764b4285d84ef1d4d94fc4 \
+  -e GEMINI_API_KEY=<your-gemini-api-key> \
   -e LLM_PROVIDER=gemini \
   -e GEMINI_MODEL=gemini-1.5-flash \
   -e TTS_PROVIDER=gtts \
@@ -63,23 +56,21 @@ docker run -d --platform linux/amd64 \
 ```
 
 **Access the application:**
-- **Backend**: `http://localhost:3000`
 - **Frontend**: `http://localhost:8080`
+- **Backend**: `http://localhost:3000`
 
-> **Note**: If the frontend page is not loading, refresh it and it will work.
+> **Note**: If the frontend page is not loading or PDF rendering gives errors like "failed to fetch", simply reload the page and wait - it will work after a moment.
 
 ## Environment Variables
-
 | Variable | Description |
 |----------|-------------|
-| `ADOBE_EMBED_API_KEY` | Adobe Embed API key |
-| `GEMINI_API_KEY` | Google Gemini API key |
+| `ADOBE_EMBED_API_KEY` | Adobe Embed API key: `663e2a29bf764b4285d84ef1d4d94fc4` (provided for hackathon) |
+| `GEMINI_API_KEY` | Google Gemini API key (required for AI analysis) |
 | `LLM_PROVIDER` | LLM provider (e.g., `gemini`) |
-| `GEMINI_MODEL` | Gemini model |
+| `GEMINI_MODEL` | Gemini model (e.g., `gemini-1.5-flash`) |
 | `TTS_PROVIDER` | Text-to-Speech provider (e.g., `gtts`) |
 
 ## Useful Docker Commands
-
 ### View Logs (Combined)
 ```bash
 docker logs -f my-fullstack-app
@@ -102,21 +93,23 @@ docker stop my-fullstack-app
 ```
 
 ## Development (Optional)
-
 If you prefer to run locally without Docker, follow these typical steps:
 
 ### Backend Setup
 1. Create and activate a Python virtual environment for the backend
 2. Install dependencies: `pip install -r requirements.txt`
-3. Run the backend server: `uvicorn backend.api:app --reload --port 8080`
+3. Run the backend server: `uvicorn backend.api:app --reload --port 3000`
 
 ### Frontend Setup
 1. Navigate to the `frontend` folder
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run dev`
 
-The frontend will typically run on port 8080.
+The frontend will typically run on port 8080, and the backend on port 3000.
+
+## Troubleshooting
+- **PDF rendering issues**: If you encounter "failed to fetch" errors when loading PDFs, reload the page and wait a moment for the Adobe Embed API to initialize properly.
+- **API key errors**: Ensure your `ADOBE_EMBED_API_KEY` and `GEMINI_API_KEY` are correctly set as environment variables.
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
